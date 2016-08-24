@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-
 		if (facingRight) {
 			playerSpriteRenderer.flipX = false;
 		} else {
