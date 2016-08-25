@@ -5,19 +5,23 @@ public class CameraFollow : MonoBehaviour {
 
 	public Transform playerTransform;
 
+	[Range(0f,1f)]
+	public float cameraFollowSpeed;
+	[Range(-1f,1f)]
+	public float cameraOffsetX;
+
 	private Transform cameraTransform;
-	private Transform castleTransform;
-	private float allowedOffset;
+	private float cameraHalfWidth;
 
 	void Start () {
 		cameraTransform = Camera.main.transform;
-		castleTransform = cameraTransform.FindChild ("Background").FindChild ("Castle").transform;
+		cameraHalfWidth = Camera.main.orthographicSize * Camera.main.aspect;
 	}
 
 	void Update(){
 		if (Mathf.Abs(playerTransform.position.y - cameraTransform.position.y) > float.Epsilon) {
-			Vector3 futurePosition = Vector3.Lerp (cameraTransform.position, playerTransform.position, 0.01f);
-			cameraTransform.position = new Vector3 (playerTransform.position.x, futurePosition.y, -10);
+			Vector3 futurePosition = Vector3.Lerp (cameraTransform.position, playerTransform.position, cameraFollowSpeed);
+			cameraTransform.position = new Vector3 (playerTransform.position.x - cameraHalfWidth * cameraOffsetX, futurePosition.y, -10);
 		}
 	}
 }
