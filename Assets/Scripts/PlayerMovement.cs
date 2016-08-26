@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour {
 	private KeyCode up;
 
 	private bool facingRight;
-	private bool jumped;
 	private bool grounded;
 	private SpriteRenderer playerSpriteRenderer;
 	private Rigidbody2D playerRigidbody;
@@ -51,8 +50,6 @@ public class PlayerMovement : MonoBehaviour {
 		if (grounded && Input.GetKeyDown (up)) {
 			Vector2 jumpVector = (Vector2.up * jumpForce);
 			playerRigidbody.AddForce (jumpVector);
-			print ("jumped");
-			jumped = true;
 		}
 	}
 
