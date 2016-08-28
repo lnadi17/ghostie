@@ -3,6 +3,9 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
+	[HideInInspector]
+	public static bool grounded;
+
 	public float speed;
 	public float jumpForce;
 
@@ -11,7 +14,6 @@ public class PlayerMovement : MonoBehaviour {
 	private KeyCode up;
 
 	private bool facingRight;
-	private bool grounded;
 	private SpriteRenderer playerSpriteRenderer;
 	private Rigidbody2D playerRigidbody;
 	private Transform groundCheck;

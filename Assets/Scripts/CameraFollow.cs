@@ -5,7 +5,7 @@ public class CameraFollow : MonoBehaviour {
 
 	public Transform playerTransform;
 
-	[Range(0f,1f)]
+	[Range(0f,0.1f)]
 	public float cameraFollowSpeed;
 	[Range(-1f,1f)]
 	public float cameraOffsetX;
