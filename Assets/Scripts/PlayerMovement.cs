@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	[HideInInspector]
 	public static bool grounded;
+	//public static float maxJumpHeight;
 
 	public float speed;
 	public float jumpForce;
@@ -17,7 +18,7 @@ public class PlayerMovement : MonoBehaviour {
 	private SpriteRenderer playerSpriteRenderer;
 	private Rigidbody2D playerRigidbody;
 	private Transform groundCheck;
-	private CircleCollider2D playerCollider;
+	//private CircleCollider2D playerCollider;
 
 	void Start () {
 		/*Temporary*/
@@ -28,9 +29,9 @@ public class PlayerMovement : MonoBehaviour {
 		facingRight = true;
 		playerSpriteRenderer = GetComponent<SpriteRenderer> ();
 		playerRigidbody = GetComponent<Rigidbody2D> ();
-		playerCollider = GetComponent<CircleCollider2D> ();
+		//playerCollider = GetComponent<CircleCollider2D> ();
 		groundCheck = transform.FindChild ("GroundCheck");
-
+		//print (maxJumpHeight);
 	}
 	
 	void Update () {
@@ -64,8 +65,10 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void CheckIfGrounded(){
-		playerCollider.enabled = false;
-		grounded = Physics2D.Linecast (transform.position, groundCheck.transform.position, 1 << LayerMask.NameToLayer("Ground"));
-		playerCollider.enabled = true;
+		grounded = Physics2D.Linecast (
+			transform.position, 
+			groundCheck.transform.position, 
+			1 << LayerMask.NameToLayer("Ground")
+		);
 	}
 }
