@@ -5,17 +5,33 @@ using Random = UnityEngine.Random;
 
 public class SceneScript : MonoBehaviour {
 
+	public static SceneScript instance = null;
 	public List<GameObject> platformPrefabs;
 	public Rigidbody2D rbPlayer;
 	public int timesX = 5;
 	public float distanceBetween;
 
+	[HideInInspector]
+	public float prevPositionX;
+	[HideInInspector]
+	public float prevPositionY;
+	[HideInInspector]
+	public float prevX;
+
 	private List<float> floatList;
 
-	private float prevPositionX;
-	private float prevPositionY;
-	private float prevX;
+	private float overallLength; //Gets assigned in LayoutPlatforms method.
 	private bool firstTime;
+
+	void Awake(){
+		if (instance == null){
+			instance = this;
+		}else if (instance != this){
+			Destroy (gameObject);
+		}
+		DontDestroyOnLoad (gameObject);
+	}
+		
 
 	void Start () {
 		floatList = new List<float> (new float[platformPrefabs.Count]);
@@ -25,6 +41,7 @@ public class SceneScript : MonoBehaviour {
 	}
 
 	void LayoutPlatforms(){
+		//First on default position.
 		Instantiate (platformPrefabs [0], platformPrefabs [0].transform.position, Quaternion.identity);
 
 		prevPositionX = platformPrefabs [0].transform.position.x;
@@ -47,6 +64,7 @@ public class SceneScript : MonoBehaviour {
 		}
 	}
 
+	//Returns sprite's half-with.
 	float xViaIndex(int index){
 		if (floatList [index] != 0) {
 			return floatList [index];
@@ -58,7 +76,8 @@ public class SceneScript : MonoBehaviour {
 		return floatList[index];
 	}
 
-	float DistanceFromY(){
+	//Returns random range for next platform's Y pos.
+	public float DistanceFromY(){
 		if (firstTime){
 			firstTime = false;
 			return 0;
@@ -67,6 +86,4 @@ public class SceneScript : MonoBehaviour {
 		float distance = Random.Range (-4f, 4f);
 		return distance;
 	}
-
-
 }
