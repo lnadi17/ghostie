@@ -9,9 +9,9 @@ public class PlayerMovement : MonoBehaviour {
 	public float speed;
 	public float jumpForce;
 
-	private KeyCode left;
+	/*private KeyCode left;
 	private KeyCode right;
-	private KeyCode up;
+	private KeyCode up;*/
 
 	private bool facingRight;
 	private SpriteRenderer playerSpriteRenderer;
@@ -19,10 +19,10 @@ public class PlayerMovement : MonoBehaviour {
 	private Transform groundCheck;
 
 	void Start () {
-		/*Temporary*/
+		/*Temporary
 		left = KeyCode.A;
 		right = KeyCode.D;
-		up = KeyCode.W;
+		up = KeyCode.W;*/
 
 		facingRight = true;
 		playerSpriteRenderer = GetComponent<SpriteRenderer> ();
@@ -40,9 +40,8 @@ public class PlayerMovement : MonoBehaviour {
 			groundCheck.transform.position = new Vector2 (transform.position.x + 0.5f, groundCheck.position.y);
 
 		}
-
-
-		if (Input.GetKey (right)) {
+			
+		/*if (Input.GetKey (right)) {
 			facingRight = true;
 			transform.Translate(new Vector2(0.1f * speed, 0));
 		}
@@ -50,10 +49,15 @@ public class PlayerMovement : MonoBehaviour {
 		if (Input.GetKey(left)){
 			facingRight = false;
 			transform.Translate(new Vector2(-0.1f * speed, 0));
+		}*/
+
+		if (SceneScript.instance.playingStarted) {
+			transform.Translate (new Vector2 (0.1f * speed, 0));
 		}
 
 		CheckIfGrounded ();
-		if (grounded && Input.GetKeyDown (up)) {
+		if (grounded && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) {
+			SceneScript.instance.playingStarted = true;
 			Vector2 jumpVector = (Vector2.up * jumpForce);
 			playerRigidbody.velocity = Vector2.zero;
 			playerRigidbody.AddForce (jumpVector);

@@ -10,6 +10,7 @@ public class SceneScript : MonoBehaviour {
 	public Rigidbody2D rbPlayer;
 	public int timesX = 5;
 	public float distanceBetween;
+	public bool playingStarted = false;
 
 	[HideInInspector]
 	public float prevPositionX;
