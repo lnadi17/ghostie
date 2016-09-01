@@ -41,7 +41,7 @@ public class SceneScript : MonoBehaviour {
 	}
 
 	void LayoutPlatforms(){
-		//First on default position.
+		//First one is always on default position.
 		Instantiate (platformPrefabs [0], platformPrefabs [0].transform.position, Quaternion.identity);
 
 		prevPositionX = platformPrefabs [0].transform.position.x;
