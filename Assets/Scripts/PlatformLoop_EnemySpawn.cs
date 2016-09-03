@@ -7,11 +7,13 @@ public class PlatformLoop_EnemySpawn : MonoBehaviour {
 
 	private Transform playerTransform;
 	private float boundsExtentsX;
+	private int chance;
 
 	void Start(){
 		playerTransform = GameObject.Find ("Player").transform;
 		SpriteRenderer rdr = GetComponent<SpriteRenderer> ();
 		boundsExtentsX = rdr.bounds.extents.x;
+		chance = SceneScript.instance.enemySpawnChance;
 	}
 
 	void OnBecameInvisible(){
@@ -31,7 +33,7 @@ public class PlatformLoop_EnemySpawn : MonoBehaviour {
 			SceneScript.instance.prevX = boundsExtentsX;
 			SceneScript.instance.prevPositionY = transform.position.y;
 
-			if (ChancePercent (50)) {
+			if (ChancePercent (chance)) {
 				SpawnEnemy ();
 			}
 		}
@@ -51,7 +53,7 @@ public class PlatformLoop_EnemySpawn : MonoBehaviour {
 			caseList.SetValue (i + 1, i);
 		}
 		int randomInt = UnityEngine.Random.Range (0, caseList.Length);
-		if (randomInt >= percentage){
+		if (randomInt <= percentage){
 			return true;
 		}
 		return false;

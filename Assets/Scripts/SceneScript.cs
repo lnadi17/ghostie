@@ -11,6 +11,8 @@ public class SceneScript : MonoBehaviour {
 	public Rigidbody2D rbPlayer;
 	public int timesX = 5;
 	public float distanceBetween;
+	[Range(0, 100)]
+	public int enemySpawnChance;
 	public bool playingStarted = false;
 
 	[HideInInspector]
