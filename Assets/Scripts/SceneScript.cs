@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Random = UnityEngine.Random;
@@ -84,7 +85,7 @@ public class SceneScript : MonoBehaviour {
 			return 0;
 		}
 
-		float distance = Random.Range (-4f, 4f);
+		float distance = Random.Range (-3.5f, 3.5f);
 		return distance;
 	}
 }
