@@ -2,9 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyLogic.cs">
     <Files>
-      <File FileName="Assets\Scripts\EnemyLogic.cs" Line="30" Column="47" />
+      <File FileName="Assets\BulletControl.cs" Line="6" Column="21" />
+      <File FileName="Assets\Scripts\EnemyLogic.cs" Line="27" Column="76" />
       <File FileName="Assets\Scripts\PlatformLoop_EnemySpawn.cs" Line="33" Column="48" />
-      <File FileName="Assets\Scripts\SceneScript.cs" Line="14" Column="12" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

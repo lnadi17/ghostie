@@ -9,19 +9,22 @@ public class EnemyLogic : MonoBehaviour {
 	private bool visible;
 	private float maxLeft;
 	private float maxRight;
+	private float randomFloat;
 
 	void Start () {
 		rb2d = GetComponent<Rigidbody2D> ();
 		//boxCol = GetComponent<BoxCollider2D> ();
 		maxLeft = transform.position.x - SceneScript.instance.prevX;
 		maxRight = transform.position.x + SceneScript.instance.prevX;
-		transform.position = RandomStartingPoint (maxLeft, maxRight);
+		//Meaningless: transform.position = RandomStartingPoint (maxLeft, maxRight);
+		//Instead:
+		randomFloat = RandomFloat();
 	}
 	
 	void Update () {
 
 		//Speed is units per second.
-		transform.position = new Vector2(PingPong(Time.time * speed, maxLeft, maxRight), transform.position.y);
+		transform.position = new Vector2(PingPong(Time.time * speed + randomFloat, maxLeft, maxRight), transform.position.y);
 
 		//Moves smoothly, useful code (don't delete).
 		/*
@@ -46,6 +49,10 @@ public class EnemyLogic : MonoBehaviour {
 		float posX = UnityEngine.Random.Range (maxLeft, maxRight);
 		float posY = transform.position.y;
 		return new Vector2 (posX, posY);
+	}
+
+	float RandomFloat(){
+		return UnityEngine.Random.Range (0f, 5f);
 	}
 
 	void OnBecameVisible(){

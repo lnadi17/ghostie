@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
+	public GameObject bullet;
+
 	[HideInInspector]
 	public static bool grounded;
 
@@ -13,6 +15,7 @@ public class PlayerMovement : MonoBehaviour {
 	private SpriteRenderer playerSpriteRenderer;
 	private Rigidbody2D playerRigidbody;
 	private Transform groundCheck;
+	private float sinceShoot = 0f; 
 
 	void Start () {
 		facingRight = true;
@@ -32,7 +35,7 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		if (SceneScript.instance.playingStarted) {
-			transform.Translate (new Vector2 (0.1f * speed, 0));
+			transform.Translate (new Vector2 (speed * Time.deltaTime, 0));
 		}
 
 		CheckIfGrounded ();
@@ -46,6 +49,16 @@ public class PlayerMovement : MonoBehaviour {
 			playerRigidbody.velocity = Vector2.zero;
 			playerRigidbody.AddForce (jumpVector);
 		}
+
+		sinceShoot += Time.deltaTime;
+		if(Input.GetKeyDown(KeyCode.LeftShift) && sinceShoot > 1){
+			Shoot ();
+		}
+	}
+
+	void Shoot(){
+		Instantiate (bullet, transform.position, Quaternion.identity);
+		sinceShoot = 0;
 	}
 
 	void CheckIfGrounded(){
