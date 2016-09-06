@@ -5,26 +5,49 @@ public class EnemyLogic : MonoBehaviour {
 
 	private float speed = 1.5f;
 	private Rigidbody2D rb2d;
-	//private BoxCollider2D boxCol;
+	private SpriteRenderer rdr;
 	private bool visible;
 	private float maxLeft;
 	private float maxRight;
 	private float randomFloat;
 
+	private bool movingRight;
+	private bool movingLeft;
+
+	private float _tempX;
+
 	void Start () {
 		rb2d = GetComponent<Rigidbody2D> ();
-		//boxCol = GetComponent<BoxCollider2D> ();
-		maxLeft = transform.position.x - SceneScript.instance.prevX;
-		maxRight = transform.position.x + SceneScript.instance.prevX;
-		//Meaningless: transform.position = RandomStartingPoint (maxLeft, maxRight);
-		//Instead:
+		rdr = GetComponent<SpriteRenderer> ();
+		maxLeft = rb2d.position.x - SceneScript.instance.prevX;
+		maxRight = rb2d.position.x + SceneScript.instance.prevX;
 		randomFloat = RandomFloat();
 	}
 	
 	void Update () {
 
 		//Speed is units per second.
-		transform.position = new Vector2(PingPong(Time.time * speed + randomFloat, maxLeft, maxRight), transform.position.y);
+		rb2d.position = new Vector2 (PingPong (Time.time * speed + randomFloat, maxLeft, maxRight), rb2d.position.y);
+
+		if(rb2d.position.x > _tempX && movingLeft){
+			rdr.flipX = !rdr.flipX;
+		}
+
+		if(rb2d.position.x < _tempX && movingRight){
+			rdr.flipX = !rdr.flipX;
+		}
+
+		if(rb2d.position.x > _tempX){
+			movingRight = true;
+			movingLeft = false;
+		}
+
+		if(rb2d.position.x < _tempX){
+			movingLeft = true;
+			movingRight = false;
+		}
+
+		_tempX = rb2d.position.x;
 
 		//Moves smoothly, useful code (don't delete).
 		/*
@@ -47,7 +70,7 @@ public class EnemyLogic : MonoBehaviour {
 
 	Vector2 RandomStartingPoint(float maxLeft, float maxRight){
 		float posX = UnityEngine.Random.Range (maxLeft, maxRight);
-		float posY = transform.position.y;
+		float posY = rb2d.position.y;
 		return new Vector2 (posX, posY);
 	}
 
@@ -60,6 +83,8 @@ public class EnemyLogic : MonoBehaviour {
 	}
 
 	void OnBecameInvisible(){
-		visible = false;
+		if(rb2d.position.x < Camera.main.transform.position.x){
+			Destroy (gameObject, 1);
+		}
 	}
 }
