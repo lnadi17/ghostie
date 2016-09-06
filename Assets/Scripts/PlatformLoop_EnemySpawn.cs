@@ -17,7 +17,7 @@ public class PlatformLoop_EnemySpawn : MonoBehaviour {
 	}
 
 	void OnBecameInvisible(){
-		if(transform.position.x < playerTransform.position.x){
+		if (transform.position.x < playerTransform.position.x) {
 			transform.position = new Vector2 (
 				//That's X:
 				+ SceneScript.instance.prevPositionX
@@ -25,8 +25,8 @@ public class PlatformLoop_EnemySpawn : MonoBehaviour {
 				+ boundsExtentsX
 				+ SceneScript.instance.distanceBetween,
 				//That's Y:
-				+ SceneScript.instance.prevPositionY
-				+ SceneScript.instance.DistanceFromY()
+				+SceneScript.instance.prevPositionY
+				+ SceneScript.instance.DistanceFromY ()
 			);
 
 			SceneScript.instance.prevPositionX = transform.position.x;
@@ -40,11 +40,11 @@ public class PlatformLoop_EnemySpawn : MonoBehaviour {
 	}
 
 	void SpawnEnemy(){
-		GameObject enemyInstance = Instantiate (
-			                           enemyPrefab, 
-			                           new Vector2 (transform.position.x, transform.position.y),
-			                           Quaternion.identity
-		                           ) as GameObject;
+		Instantiate (
+			enemyPrefab, 
+			new Vector2 (transform.position.x, transform.position.y),
+			Quaternion.identity
+		);
 	}
 
 	bool ChancePercent(int percentage){

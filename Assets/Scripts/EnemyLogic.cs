@@ -3,10 +3,11 @@ using System.Collections;
 
 public class EnemyLogic : MonoBehaviour {
 
-	private float speed = 1.5f;
+	public GameObject explosion;
+	public float speed = 1.5f;
+
 	private Rigidbody2D rb2d;
 	private SpriteRenderer rdr;
-	private bool visible;
 	private float maxLeft;
 	private float maxRight;
 	private float randomFloat;
@@ -32,7 +33,6 @@ public class EnemyLogic : MonoBehaviour {
 		if(rb2d.position.x > _tempX && movingLeft){
 			rdr.flipX = !rdr.flipX;
 		}
-
 		if(rb2d.position.x < _tempX && movingRight){
 			rdr.flipX = !rdr.flipX;
 		}
@@ -41,7 +41,6 @@ public class EnemyLogic : MonoBehaviour {
 			movingRight = true;
 			movingLeft = false;
 		}
-
 		if(rb2d.position.x < _tempX){
 			movingLeft = true;
 			movingRight = false;
@@ -78,13 +77,23 @@ public class EnemyLogic : MonoBehaviour {
 		return UnityEngine.Random.Range (0f, 5f);
 	}
 
-	void OnBecameVisible(){
-		visible = true;
+	void OnBecameInvisible(){
+		if (gameObject != null) {
+			if (rb2d.position.x < Camera.main.transform.position.x) {
+				Destroy (gameObject);
+			}
+		}
 	}
 
-	void OnBecameInvisible(){
-		if(rb2d.position.x < Camera.main.transform.position.x){
-			Destroy (gameObject, 1);
+	void OnTriggerEnter2D(Collider2D other){
+		if(other.tag == "Bullet"){
+			Instantiate (
+				explosion,
+				transform.position,
+				Quaternion.identity
+			);
+				
+			Destroy (gameObject);
 		}
 	}
 }

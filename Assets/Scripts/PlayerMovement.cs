@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour {
 	private bool facingRight;
 	private SpriteRenderer playerSpriteRenderer;
 	private Rigidbody2D playerRigidbody;
+	private ParticleSystem pSystem;
 	private Transform groundCheck;
 	private float sinceShoot = 0f; 
 
@@ -21,7 +22,8 @@ public class PlayerMovement : MonoBehaviour {
 		facingRight = true;
 		playerSpriteRenderer = GetComponent<SpriteRenderer> ();
 		playerRigidbody = GetComponent<Rigidbody2D> ();
-		groundCheck = transform.FindChild ("GroundCheck");
+		groundCheck = transform.Find("GroundCheck");
+		pSystem = groundCheck.GetComponent<ParticleSystem> ();
 	}
 	
 	void Update () {
@@ -31,10 +33,11 @@ public class PlayerMovement : MonoBehaviour {
 		} else {
 			playerSpriteRenderer.flipX = true;
 			groundCheck.transform.position = new Vector2 (transform.position.x + 0.5f, groundCheck.position.y);
-
 		}
 
+		//When playing starts:
 		if (SceneScript.instance.playingStarted) {
+			pSystem.Play();
 			transform.Translate (new Vector2 (speed * Time.deltaTime, 0));
 		}
 

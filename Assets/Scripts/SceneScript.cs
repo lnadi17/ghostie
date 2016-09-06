@@ -7,13 +7,18 @@ using Random = UnityEngine.Random;
 public class SceneScript : MonoBehaviour {
 
 	public static SceneScript instance = null;
+
+	public int playerLives = 3;
+	public int score = 0;
+	public bool playingStarted = false;
+	//public bool gameOver = false;
+
 	public List<GameObject> platformPrefabs;
 	public Rigidbody2D rbPlayer;
 	public int timesX = 5;
 	public float distanceBetween;
 	[Range(0, 100)]
 	public int enemySpawnChance;
-	public bool playingStarted = false;
 
 	[HideInInspector]
 	public float prevPositionX;
@@ -33,7 +38,6 @@ public class SceneScript : MonoBehaviour {
 		}else if (instance != this){
 			Destroy (gameObject);
 		}
-		DontDestroyOnLoad (gameObject);
 	}
 		
 
@@ -87,7 +91,7 @@ public class SceneScript : MonoBehaviour {
 			return 0;
 		}
 
-		float distance = Random.Range (-3.5f, 3.5f);
+		float distance = Random.Range (-3.5f, 3.3f);
 		return distance;
 	}
 }
