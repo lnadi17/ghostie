@@ -18,12 +18,20 @@ public class PlayerMovement : MonoBehaviour {
 	private Transform groundCheck;
 	private float sinceShoot = 0f; 
 
+	//Touch controls:
+	//private int heightPixel;
+	private int widthPixel;
+
 	void Start () {
 		facingRight = true;
 		playerSpriteRenderer = GetComponent<SpriteRenderer> ();
 		playerRigidbody = GetComponent<Rigidbody2D> ();
 		groundCheck = transform.Find("GroundCheck");
 		pSystem = groundCheck.GetComponent<ParticleSystem> ();
+
+		//Touch controls:
+		//heightPixel = Camera.main.pixelHeight;
+		widthPixel = Camera.main.pixelWidth;
 	}
 	
 	void Update () {
@@ -37,15 +45,18 @@ public class PlayerMovement : MonoBehaviour {
 
 		//When playing starts:
 		if (SceneScript.instance.playingStarted) {
+			Debug.Log ("1");
 			pSystem.Play();
 			transform.Translate (new Vector2 (speed * Time.deltaTime, 0));
 		}
 
 		CheckIfGrounded ();
 		//if (grounded && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) {
-		if (grounded && Input.GetKeyDown(KeyCode.Space)){
+		//if (grounded && Input.GetKeyDown(KeyCode.Space)){
+		if (grounded && leftSideTouch()){
 			if (!SceneScript.instance.playingStarted) {
 				SceneScript.instance.playingStarted = true;
+				Debug.Log ("2");
 				return;
 			}
 			Vector2 jumpVector = (Vector2.up * jumpForce);
@@ -54,7 +65,8 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		sinceShoot += Time.deltaTime;
-		if(Input.GetKeyDown(KeyCode.LeftShift) && sinceShoot > 1){
+		if(rightSideTouch() && sinceShoot > 1){
+		//if(Input.GetKeyDown(KeyCode.LeftShift) && sinceShoot > 1){
 			Shoot ();
 		}
 	}
@@ -70,5 +82,29 @@ public class PlayerMovement : MonoBehaviour {
 			groundCheck.transform.position, 
 			1 << LayerMask.NameToLayer("Ground")
 		);
+	}
+
+	bool leftSideTouch(){
+		/*if(Input.GetTouch(0).position.x < widthPixel * 0.5f && Input.GetTouch(0).phase == TouchPhase.Began){x
+			return true;
+		}*/
+		foreach(Touch touch in Input.touches){
+			if(touch.position.x < widthPixel * 0.5f && touch.phase == TouchPhase.Began){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	bool rightSideTouch(){
+		/*if(Input.GetTouch(0).position.x > widthPixel * 0.5f && Input.GetTouch(0).phase == TouchPhase.Began){
+			return true;
+		}*/
+		foreach(Touch touch in Input.touches){
+			if(touch.position.x > widthPixel * 0.5f && touch.phase == TouchPhase.Began){
+				return true;
+			}
+		}
+		return false;
 	}
 }

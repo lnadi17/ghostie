@@ -12,8 +12,4 @@ public class BulletControl : MonoBehaviour {
 	void Update () {
 		transform.Translate (new Vector2 (speed * Time.deltaTime, 0));
 	}
-
-	void OnTriggerEnter2D(Collider2D other){
-		
-	}
 }

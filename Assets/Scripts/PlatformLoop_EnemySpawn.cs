@@ -17,24 +17,26 @@ public class PlatformLoop_EnemySpawn : MonoBehaviour {
 	}
 
 	void OnBecameInvisible(){
-		if (transform.position.x < playerTransform.position.x) {
-			transform.position = new Vector2 (
+		if (gameObject.activeSelf) { 
+			if (transform.position.x < playerTransform.position.x) {
+				transform.position = new Vector2 (
 				//That's X:
-				+ SceneScript.instance.prevPositionX
-				+ SceneScript.instance.prevX
-				+ boundsExtentsX
-				+ SceneScript.instance.distanceBetween,
+					+SceneScript.instance.prevPositionX
+					+ SceneScript.instance.prevX
+					+ boundsExtentsX
+					+ SceneScript.instance.distanceBetween,
 				//That's Y:
-				+SceneScript.instance.prevPositionY
-				+ SceneScript.instance.DistanceFromY ()
-			);
+					+SceneScript.instance.prevPositionY
+					+ SceneScript.instance.DistanceFromY ()
+				);
 
-			SceneScript.instance.prevPositionX = transform.position.x;
-			SceneScript.instance.prevX = boundsExtentsX;
-			SceneScript.instance.prevPositionY = transform.position.y;
+				SceneScript.instance.prevPositionX = transform.position.x;
+				SceneScript.instance.prevX = boundsExtentsX;
+				SceneScript.instance.prevPositionY = transform.position.y;
 
-			if (ChancePercent (chance)) {
-				SpawnEnemy ();
+				if (ChancePercent (chance)) {
+					SpawnEnemy ();
+				}
 			}
 		}
 	}

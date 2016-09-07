@@ -72,7 +72,7 @@ public class SceneScript : MonoBehaviour {
 		}
 	}
 
-	//Returns sprite's half-with.
+	//Returns sprite's half-width.
 	float xViaIndex(int index){
 		if (floatList [index] != 0) {
 			return floatList [index];

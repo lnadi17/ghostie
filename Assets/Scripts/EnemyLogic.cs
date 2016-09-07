@@ -6,6 +6,7 @@ public class EnemyLogic : MonoBehaviour {
 	public GameObject explosion;
 	public float speed = 1.5f;
 
+	private Transform cameraTransform;
 	private Rigidbody2D rb2d;
 	private SpriteRenderer rdr;
 	private float maxLeft;
@@ -22,6 +23,7 @@ public class EnemyLogic : MonoBehaviour {
 		rdr = GetComponent<SpriteRenderer> ();
 		maxLeft = rb2d.position.x - SceneScript.instance.prevX;
 		maxRight = rb2d.position.x + SceneScript.instance.prevX;
+		cameraTransform = Camera.main.transform;
 		randomFloat = RandomFloat();
 	}
 	
@@ -78,8 +80,8 @@ public class EnemyLogic : MonoBehaviour {
 	}
 
 	void OnBecameInvisible(){
-		if (gameObject != null) {
-			if (rb2d.position.x < Camera.main.transform.position.x) {
+		if (gameObject.activeSelf) {
+			if (rb2d.position.x < cameraTransform.position.x) {
 				Destroy (gameObject);
 			}
 		}

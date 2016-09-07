@@ -5,9 +5,27 @@ public class BackgroundLoop : MonoBehaviour {
 
 	public float distanceBetween;
 
-	void OnBecameInvisible(){
+	private SpriteRenderer rdr;
+	private Transform cameraTransform;
+
+	void Start(){
+		rdr = GetComponent<SpriteRenderer> ();
+		cameraTransform = Camera.main.transform;
+		StartCoroutine (CheckForReposition ());
+	}
+
+	IEnumerator CheckForReposition(){
+		while (true) {
+			yield return new WaitForSeconds (1f);
+			if (!rdr.isVisible && transform.position.x < cameraTransform.position.x) {
+				transform.Translate (new Vector2 (distanceBetween * 2, 0));
+			}
+		}
+	}
+
+	/*void OnBecameInvisible(){
 		if (transform.position.x < Camera.main.transform.position.x) {
 			transform.Translate (new Vector2 (distanceBetween * 2, 0));
 		}
-	}
+	}*/
 }
