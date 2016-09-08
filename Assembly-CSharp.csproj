@@ -46,18 +46,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FirstScript.cs" />
      <Compile Include="Assets\Scripts\BackgroundLoop.cs" />
      <Compile Include="Assets\Scripts\BulletControl.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\CameraFollow_Alt.cs" />
      <Compile Include="Assets\Scripts\EnemyLogic.cs" />
+     <Compile Include="Assets\Scripts\GameOver.cs" />
      <Compile Include="Assets\Scripts\ParallaxExperimental.cs" />
      <Compile Include="Assets\Scripts\ParticleDestroy.cs" />
      <Compile Include="Assets\Scripts\PlatformLoop_EnemySpawn.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\SceneScript.cs" />
-     <Compile Include="Assets\SecondScript.cs" />
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>C:/Program Files/Unity 5.5.0b2/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
  </Reference>

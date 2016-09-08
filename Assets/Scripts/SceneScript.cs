@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,6 +21,7 @@ public class SceneScript : MonoBehaviour {
 	public float distanceBetween;
 	[Range(0, 100)]
 	public int enemySpawnChance;
+	public Text scoreText;
 
 	[HideInInspector]
 	public float prevPositionX;
@@ -46,6 +49,15 @@ public class SceneScript : MonoBehaviour {
 		firstTime = true;
 
 		LayoutPlatforms ();
+		StartCoroutine (IncreaseScore ());
+	}
+
+	IEnumerator IncreaseScore(){
+		while (true) {
+			if (playingStarted) {score = (int)rbPlayer.transform.position.x;}
+			scoreText.text = "Score: " + score.ToString ();
+			yield return new WaitForSeconds (.2f);
+		}
 	}
 
 	void LayoutPlatforms(){
@@ -93,5 +105,9 @@ public class SceneScript : MonoBehaviour {
 
 		float distance = Random.Range (-3.5f, 3.3f);
 		return distance;
+	}
+
+	public void ReloadScene(){
+		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 	}
 }

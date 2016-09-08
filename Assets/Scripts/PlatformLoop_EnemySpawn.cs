@@ -21,12 +21,12 @@ public class PlatformLoop_EnemySpawn : MonoBehaviour {
 			if (transform.position.x < playerTransform.position.x) {
 				transform.position = new Vector2 (
 				//That's X:
-					+SceneScript.instance.prevPositionX
+					+ SceneScript.instance.prevPositionX
 					+ SceneScript.instance.prevX
 					+ boundsExtentsX
 					+ SceneScript.instance.distanceBetween,
 				//That's Y:
-					+SceneScript.instance.prevPositionY
+					+ SceneScript.instance.prevPositionY
 					+ SceneScript.instance.DistanceFromY ()
 				);
 

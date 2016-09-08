@@ -45,18 +45,15 @@ public class PlayerMovement : MonoBehaviour {
 
 		//When playing starts:
 		if (SceneScript.instance.playingStarted) {
-			Debug.Log ("1");
 			pSystem.Play();
 			transform.Translate (new Vector2 (speed * Time.deltaTime, 0));
 		}
 
 		CheckIfGrounded ();
-		//if (grounded && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) {
 		//if (grounded && Input.GetKeyDown(KeyCode.Space)){
 		if (grounded && leftSideTouch()){
 			if (!SceneScript.instance.playingStarted) {
 				SceneScript.instance.playingStarted = true;
-				Debug.Log ("2");
 				return;
 			}
 			Vector2 jumpVector = (Vector2.up * jumpForce);
