@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\CameraFollow_Alt.cs" />
      <Compile Include="Assets\Scripts\EnemyLogic.cs" />
      <Compile Include="Assets\Scripts\GameOver.cs" />
+     <Compile Include="Assets\Scripts\MiniSceneManager.cs" />
      <Compile Include="Assets\Scripts\ParallaxExperimental.cs" />
      <Compile Include="Assets\Scripts\ParticleDestroy.cs" />
      <Compile Include="Assets\Scripts\PlatformLoop_EnemySpawn.cs" />

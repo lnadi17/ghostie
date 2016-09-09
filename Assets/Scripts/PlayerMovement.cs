@@ -17,9 +17,6 @@ public class PlayerMovement : MonoBehaviour {
 	private ParticleSystem pSystem;
 	private Transform groundCheck;
 	private float sinceShoot = 0f; 
-
-	//Touch controls:
-	//private int heightPixel;
 	private int widthPixel;
 
 	void Start () {
@@ -28,9 +25,6 @@ public class PlayerMovement : MonoBehaviour {
 		playerRigidbody = GetComponent<Rigidbody2D> ();
 		groundCheck = transform.Find("GroundCheck");
 		pSystem = groundCheck.GetComponent<ParticleSystem> ();
-
-		//Touch controls:
-		//heightPixel = Camera.main.pixelHeight;
 		widthPixel = Camera.main.pixelWidth;
 	}
 	
@@ -50,8 +44,8 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		CheckIfGrounded ();
-		//if (grounded && Input.GetKeyDown(KeyCode.Space)){
-		if (grounded && leftSideTouch()){
+		if (grounded && Input.GetKeyDown(KeyCode.Space)){
+		//if (grounded && leftSideTouch()){
 			if (!SceneScript.instance.playingStarted) {
 				SceneScript.instance.playingStarted = true;
 				return;
