@@ -12,6 +12,7 @@ public class SceneScript : MonoBehaviour {
 
 	public int playerLives = 3;
 	public int score = 0;
+	public int killedEnemies = 0;
 	public bool playingStarted = false;
 	//public bool gameOver = false;
 
