@@ -108,7 +108,6 @@ public class SceneScript : MonoBehaviour {
 		return distance;
 	}
 
-
 	//Scene changing:
 	public void ReloadScene(){
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);

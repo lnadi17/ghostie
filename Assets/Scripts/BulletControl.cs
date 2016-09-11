@@ -4,6 +4,8 @@ using System.Collections;
 public class BulletControl : MonoBehaviour {
 
 	public float speed;
+	public Animator anim;
+	public UnityEngine.UI.Text txt;
 
 	private int enemyCount = 0;
 
@@ -16,16 +18,20 @@ public class BulletControl : MonoBehaviour {
 	}
 
 	//Enemy collider is not a trigger but it works.
-	void OnTriggerEnter2D(Collider2D other){
+	void OnTriggerEnter2D (Collider2D other){
 		if(other.tag == "Enemy"){
 			SceneScript.instance.killedEnemies++;
 			enemyCount++;
 		}
 		if(enemyCount == 2){
-			print ("doublekill");
+			anim.SetTrigger ("Double");
 		}
 		else if (enemyCount == 3){
-			print ("doublekill");
+			anim.SetTrigger ("Triple");
 		}
+	}
+
+	public void SetText (string textParam){
+		txt.text = textParam;
 	}
 }
