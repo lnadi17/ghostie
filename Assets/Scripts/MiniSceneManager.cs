@@ -22,4 +22,12 @@ public class MiniSceneManager : MonoBehaviour {
 			op.allowSceneActivation = true;
 		}
 	}
+
+	public void ReloadScene(){
+		LoadMainScene ();
+	}
+
+	public void BackToMenu(){
+		SceneManager.LoadScene ("MenuScene");
+	}
 }

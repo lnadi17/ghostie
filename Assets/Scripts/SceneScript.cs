@@ -24,6 +24,9 @@ public class SceneScript : MonoBehaviour {
 	public int enemySpawnChance;
 	public Text scoreText;
 
+	public Animator killAnim;
+	public Text killText;
+
 	[HideInInspector]
 	public float prevPositionX;
 	[HideInInspector]
@@ -108,12 +111,14 @@ public class SceneScript : MonoBehaviour {
 		return distance;
 	}
 
-	//Scene changing:
-	public void ReloadScene(){
-		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+	//Multiple kill controls:
+	public void DoubleKill(){
+		killText.text = "DOUBLE KILL!";
+		killAnim.SetTrigger ("Double");
 	}
 
-	public void BackToMenu(){
-		SceneManager.LoadScene ("MenuScene");
+	public void TripleKill(){
+		killText.text = "TRIPLE KILL!";
+		killAnim.SetTrigger ("Triple");
 	}
 }

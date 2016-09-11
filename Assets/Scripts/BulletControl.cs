@@ -4,8 +4,6 @@ using System.Collections;
 public class BulletControl : MonoBehaviour {
 
 	public float speed;
-	public Animator anim;
-	public UnityEngine.UI.Text txt;
 
 	private int enemyCount = 0;
 
@@ -24,14 +22,10 @@ public class BulletControl : MonoBehaviour {
 			enemyCount++;
 		}
 		if(enemyCount == 2){
-			anim.SetTrigger ("Double");
+			SceneScript.instance.DoubleKill ();
 		}
 		else if (enemyCount == 3){
-			anim.SetTrigger ("Triple");
+			SceneScript.instance.TripleKill ();
 		}
-	}
-
-	public void SetText (string textParam){
-		txt.text = textParam;
 	}
 }

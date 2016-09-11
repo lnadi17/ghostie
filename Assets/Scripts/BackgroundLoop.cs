@@ -22,10 +22,4 @@ public class BackgroundLoop : MonoBehaviour {
 			}
 		}
 	}
-
-	/*void OnBecameInvisible(){
-		if (transform.position.x < Camera.main.transform.position.x) {
-			transform.Translate (new Vector2 (distanceBetween * 2, 0));
-		}
-	}*/
 }
