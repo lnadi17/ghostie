@@ -59,7 +59,7 @@ public class SceneScript : MonoBehaviour {
 	IEnumerator IncreaseScore(){
 		while (true) {
 			if (playingStarted) {score = (int)rbPlayer.transform.position.x;}
-			scoreText.text = "Score: " + score.ToString ();
+			scoreText.text = "Distance: " + score.ToString () + "m";
 			yield return new WaitForSeconds (.2f);
 		}
 	}

@@ -23,6 +23,6 @@ public class GameOver : MonoBehaviour {
 
 	void IfOver(){
 		overCanvas.SetActive (true);
-		scoreText.text = SceneScript.instance.score.ToString ();
+		scoreText.text = SceneScript.instance.score.ToString () + "m";
 	}
 }

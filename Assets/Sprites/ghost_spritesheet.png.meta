@@ -12,12 +12,12 @@ TextureImporter:
     21300010: ghost_enemy2
     21300012: ghost_background
     21300014: ghost_tree
-  serializedVersion: 2
+  serializedVersion: 4
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
     mipMapFadeDistanceStart: 1
@@ -31,8 +31,6 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 7
-  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
   maxTextureSize: 2048
@@ -43,9 +41,7 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
-  rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -53,12 +49,52 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 128
+  alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings: []
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: 47
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 1
+    overridden: 1
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: platform_1
+    - serializedVersion: 2
+      name: platform_1
       rect:
         serializedVersion: 2
         x: 140
@@ -68,44 +104,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -80, y: -49.5}
-        - {x: -43, y: -49.5}
-        - {x: 30, y: -62.5}
-        - {x: 51, y: -63.5}
-        - {x: 69, y: -63.5}
-        - {x: 109, y: -56.5}
-        - {x: 172, y: -45.5}
-        - {x: 250, y: -60.5}
-        - {x: 315, y: -58.5}
-        - {x: 409, y: -41.5}
-        - {x: 426, y: -30.5}
-        - {x: 426, y: 6.5}
-        - {x: 403, y: 37.5}
-        - {x: 372, y: 52.5}
-        - {x: 312, y: 53.5}
-        - {x: 110, y: 58.5}
-        - {x: 42, y: 53.5}
-        - {x: -3, y: 61.5}
-        - {x: -18, y: 63.5}
-        - {x: -77, y: 63.5}
-        - {x: -148, y: 50.5}
-        - {x: -237, y: 63.5}
-        - {x: -253, y: 63.5}
-        - {x: -310, y: 52.5}
-        - {x: -384, y: 51.5}
-        - {x: -402, y: 42.5}
-        - {x: -408, y: 38.5}
-        - {x: -421, y: 24.5}
-        - {x: -426, y: 16.5}
-        - {x: -426, y: -25.5}
-        - {x: -419, y: -39.5}
-        - {x: -393, y: -63.5}
-        - {x: -316, y: -63.5}
-        - {x: -272, y: -54.5}
-        - {x: -204, y: -63.5}
-        - {x: -133, y: -63.5}
-    - name: platform_2
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: platform_2
       rect:
         serializedVersion: 2
         x: 1105
@@ -115,36 +117,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 70.5, y: -63}
-        - {x: 112.5, y: -45}
-        - {x: 191.5, y: -61}
-        - {x: 248.5, y: -59}
-        - {x: 312.5, y: -39}
-        - {x: 320.5, y: -28}
-        - {x: 320.5, y: 8}
-        - {x: 296.5, y: 46}
-        - {x: 263.5, y: 56}
-        - {x: 238.5, y: 54}
-        - {x: 183.5, y: 46}
-        - {x: 133.5, y: 56}
-        - {x: 74.5, y: 59}
-        - {x: 44.5, y: 56}
-        - {x: -13.5, y: 64}
-        - {x: -68.5, y: 64}
-        - {x: -109.5, y: 53}
-        - {x: -196.5, y: 63}
-        - {x: -270.5, y: 60}
-        - {x: -316.5, y: 43}
-        - {x: -320.5, y: 27}
-        - {x: -320.5, y: -33}
-        - {x: -315.5, y: -45}
-        - {x: -289.5, y: -64}
-        - {x: -99.5, y: -64}
-        - {x: -56.5, y: -49}
-        - {x: 10.5, y: -64}
-        - {x: 30.5, y: -64}
-    - name: ghost_character
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ghost_character
       rect:
         serializedVersion: 2
         x: 294
@@ -154,18 +130,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 29.5, y: 93.5}
-        - {x: -30.5, y: 93.5}
-        - {x: -57.5, y: 80.5}
-        - {x: -78.5, y: 54.5}
-        - {x: -83.5, y: 38.5}
-        - {x: -83.5, y: -90.5}
-        - {x: -80.5, y: -93.5}
-        - {x: 83.5, y: -93.5}
-        - {x: 83.5, y: 46.5}
-        - {x: 58.5, y: 79.5}
-    - name: ghost_bullet
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ghost_bullet
       rect:
         serializedVersion: 2
         x: 580
@@ -175,16 +143,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -18, y: 46.5}
-        - {x: -82, y: 23.5}
-        - {x: -82, y: -6.5}
-        - {x: -24, y: -46.5}
-        - {x: 72, y: -46.5}
-        - {x: 82, y: -26.5}
-        - {x: 82, y: 44.5}
-        - {x: 80, y: 46.5}
-    - name: ghost_enemy1
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ghost_enemy1
       rect:
         serializedVersion: 2
         x: 1315
@@ -194,13 +156,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -61, y: 63.5}
-        - {x: -61, y: -63.5}
-        - {x: 61, y: -63.5}
-        - {x: 61, y: 55.5}
-        - {x: 43, y: 63.5}
-    - name: ghost_enemy2
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ghost_enemy2
       rect:
         serializedVersion: 2
         x: 1462
@@ -210,16 +169,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -36.5, y: 62.5}
-        - {x: -62.5, y: 51.5}
-        - {x: -62.5, y: -34.5}
-        - {x: -36.5, y: -62.5}
-        - {x: 51.5, y: -62.5}
-        - {x: 62.5, y: -35.5}
-        - {x: 62.5, y: 52.5}
-        - {x: 53.5, y: 62.5}
-    - name: ghost_background
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ghost_background
       rect:
         serializedVersion: 2
         x: 149
@@ -229,180 +182,10 @@ TextureImporter:
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 1001, y: 147}
-        - {x: 962, y: 190}
-        - {x: 967, y: 212}
-        - {x: 970, y: 226}
-        - {x: 967, y: 253}
-        - {x: 937, y: 327}
-        - {x: 929, y: 325}
-        - {x: 926, y: 293}
-        - {x: 901, y: 246}
-        - {x: 906, y: 226}
-        - {x: 910, y: 167}
-        - {x: 858, y: 234}
-        - {x: 843, y: 275}
-        - {x: 832, y: 339}
-        - {x: 829, y: 384}
-        - {x: 823, y: 436}
-        - {x: 820, y: 442}
-        - {x: 832, y: 500}
-        - {x: 825, y: 534}
-        - {x: 819, y: 556}
-        - {x: 814, y: 552}
-        - {x: 797, y: 528}
-        - {x: 796, y: 518}
-        - {x: 797, y: 458}
-        - {x: 785, y: 448}
-        - {x: 761, y: 451}
-        - {x: 763, y: 485}
-        - {x: 747, y: 502}
-        - {x: 743, y: 578}
-        - {x: 733, y: 617}
-        - {x: 751, y: 670}
-        - {x: 773, y: 679}
-        - {x: 783, y: 690}
-        - {x: 780, y: 702}
-        - {x: 747, y: 694}
-        - {x: 711, y: 722}
-        - {x: 719, y: 783}
-        - {x: 718, y: 786}
-        - {x: 715, y: 787}
-        - {x: 710, y: 786}
-        - {x: 697, y: 717}
-        - {x: 678, y: 695}
-        - {x: 651, y: 712}
-        - {x: 643, y: 704}
-        - {x: 647, y: 680}
-        - {x: 676, y: 666}
-        - {x: 687, y: 653}
-        - {x: 667, y: 590}
-        - {x: 661, y: 561}
-        - {x: 683, y: 526}
-        - {x: 663, y: 481}
-        - {x: 671, y: 452}
-        - {x: 644, y: 451}
-        - {x: 629, y: 497}
-        - {x: 634, y: 532}
-        - {x: 634, y: 551}
-        - {x: 627, y: 573}
-        - {x: 620, y: 571}
-        - {x: 601, y: 537}
-        - {x: 608, y: 489}
-        - {x: 599, y: 445}
-        - {x: 598, y: 393}
-        - {x: 582, y: 376}
-        - {x: 575, y: 351}
-        - {x: 578, y: 300}
-        - {x: 562, y: 268}
-        - {x: 537, y: 264}
-        - {x: 514, y: 315}
-        - {x: 515, y: 350}
-        - {x: 520, y: 447}
-        - {x: 534, y: 483}
-        - {x: 564, y: 522}
-        - {x: 573, y: 543}
-        - {x: 578, y: 573}
-        - {x: 576, y: 607}
-        - {x: 567, y: 623}
-        - {x: 561, y: 622}
-        - {x: 546, y: 577}
-        - {x: 529, y: 568}
-        - {x: 516, y: 581}
-        - {x: 508, y: 629}
-        - {x: 503, y: 634}
-        - {x: 488, y: 588}
-        - {x: 477, y: 574}
-        - {x: 457, y: 581}
-        - {x: 449, y: 637}
-        - {x: 446, y: 638}
-        - {x: 443, y: 635}
-        - {x: 409, y: 588}
-        - {x: 397, y: 633}
-        - {x: 394, y: 638}
-        - {x: 391, y: 637}
-        - {x: 379, y: 578}
-        - {x: 380, y: 543}
-        - {x: 390, y: 522}
-        - {x: 429, y: 425}
-        - {x: 429, y: 341}
-        - {x: 411, y: 263}
-        - {x: 397, y: 271}
-        - {x: 388, y: 301}
-        - {x: 392, y: 325}
-        - {x: 402, y: 374}
-        - {x: 379, y: 420}
-        - {x: 374, y: 441}
-        - {x: 349, y: 411}
-        - {x: 332, y: 390}
-        - {x: 333, y: 372}
-        - {x: 350, y: 333}
-        - {x: 346, y: 252}
-        - {x: 325, y: 223}
-        - {x: 331, y: 255}
-        - {x: 317, y: 309}
-        - {x: 319, y: 333}
-        - {x: 315, y: 335}
-        - {x: 308, y: 326}
-        - {x: 296, y: 276}
-        - {x: 298, y: 224}
-        - {x: 286, y: 215}
-        - {x: 263, y: 232}
-        - {x: 268, y: 298}
-        - {x: 269, y: 328}
-        - {x: 267, y: 378}
-        - {x: 252, y: 400}
-        - {x: 224, y: 410}
-        - {x: 225, y: 448}
-        - {x: 222, y: 472}
-        - {x: 213, y: 536}
-        - {x: 211, y: 538}
-        - {x: 208, y: 537}
-        - {x: 204, y: 506}
-        - {x: 192, y: 491}
-        - {x: 188, y: 475}
-        - {x: 192, y: 459}
-        - {x: 183, y: 433}
-        - {x: 191, y: 418}
-        - {x: 160, y: 405}
-        - {x: 157, y: 395}
-        - {x: 154, y: 358}
-        - {x: 151, y: 246}
-        - {x: 140, y: 221}
-        - {x: 114, y: 232}
-        - {x: 121, y: 280}
-        - {x: 108, y: 316}
-        - {x: 89, y: 346}
-        - {x: 87, y: 369}
-        - {x: 90, y: 477}
-        - {x: 82, y: 482}
-        - {x: 59, y: 488}
-        - {x: 35, y: 495}
-        - {x: 38, y: 527}
-        - {x: 19, y: 562}
-        - {x: 22, y: 603}
-        - {x: 23, y: 623}
-        - {x: 12, y: 653}
-        - {x: 24, y: 718}
-        - {x: 53, y: 740}
-        - {x: 56, y: 745}
-        - {x: 52, y: 758}
-        - {x: 46, y: 757}
-        - {x: 22, y: 747}
-        - {x: 1, y: 758}
-        - {x: 0, y: 758}
-        - {x: 0, y: 0}
-        - {x: 1040, y: 0}
-        - {x: 1040, y: 22}
-        - {x: 1011, y: 133}
-      - - {x: 190, y: 535}
-        - {x: 192, y: 533}
-        - {x: 195, y: 534}
-        - {x: 195, y: 551}
-        - {x: 193, y: 553}
-        - {x: 190, y: 552}
-    - name: ghost_tree
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ghost_tree
       rect:
         serializedVersion: 2
         x: 1278
@@ -412,81 +195,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 259, y: -288}
-        - {x: 263, y: -288}
-        - {x: 264, y: -285}
-        - {x: 260, y: -277}
-        - {x: 242, y: -237}
-        - {x: 233, y: -188}
-        - {x: 233, y: -161}
-        - {x: 239, y: -122}
-        - {x: 251, y: -87}
-        - {x: 275, y: -47}
-        - {x: 285, y: -42}
-        - {x: 306, y: -27}
-        - {x: 335, y: 3}
-        - {x: 343, y: 15}
-        - {x: 355, y: 42}
-        - {x: 363, y: 63}
-        - {x: 366, y: 79}
-        - {x: 366, y: 145}
-        - {x: 365, y: 154}
-        - {x: 358, y: 176}
-        - {x: 333, y: 217}
-        - {x: 307, y: 244}
-        - {x: 281, y: 263}
-        - {x: 253, y: 276}
-        - {x: 235, y: 283}
-        - {x: 214, y: 287}
-        - {x: 209, y: 288}
-        - {x: 141, y: 288}
-        - {x: 109, y: 281}
-        - {x: 91, y: 275}
-        - {x: 55, y: 257}
-        - {x: 45, y: 251}
-        - {x: 25, y: 237}
-        - {x: -22, y: 200}
-        - {x: -70, y: 186}
-        - {x: -94, y: 185}
-        - {x: -117, y: 181}
-        - {x: -137, y: 172}
-        - {x: -186, y: 131}
-        - {x: -204, y: 124}
-        - {x: -229, y: 121}
-        - {x: -262, y: 120}
-        - {x: -286, y: 113}
-        - {x: -329, y: 91}
-        - {x: -366, y: 80}
-        - {x: -366, y: 74}
-        - {x: -351, y: 69}
-        - {x: -296, y: 40}
-        - {x: -274, y: 33}
-        - {x: -250, y: 32}
-        - {x: -197, y: 39}
-        - {x: -156, y: 25}
-        - {x: -117, y: -2}
-        - {x: -81, y: -23}
-        - {x: -64, y: -28}
-        - {x: -30, y: -27}
-        - {x: 5, y: -13}
-        - {x: 24, y: -13}
-        - {x: 46, y: -20}
-        - {x: 77, y: -41}
-        - {x: 94, y: -58}
-        - {x: 117, y: -94}
-        - {x: 125, y: -119}
-        - {x: 124, y: -169}
-        - {x: 106, y: -212}
-        - {x: 79, y: -246}
-        - {x: 54, y: -264}
-        - {x: 18, y: -278}
-        - {x: 11, y: -285}
-        - {x: 18, y: -288}
-        - {x: 103, y: -288}
-        - {x: 120, y: -286}
-        - {x: 181, y: -279}
-        - {x: 216, y: -279}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 
