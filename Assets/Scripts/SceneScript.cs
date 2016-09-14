@@ -26,6 +26,7 @@ public class SceneScript : MonoBehaviour {
 
 	public Animator killAnim;
 	public Text killText;
+	public Text killCountText;
 
 	[HideInInspector]
 	public float prevPositionX;
@@ -56,11 +57,12 @@ public class SceneScript : MonoBehaviour {
 		StartCoroutine (IncreaseScore ());
 	}
 
+	//Score up:
 	IEnumerator IncreaseScore(){
 		while (true) {
 			if (playingStarted) {score = (int)rbPlayer.transform.position.x;}
 			scoreText.text = "Distance: " + score.ToString () + "m";
-			yield return new WaitForSeconds (.2f);
+			yield return new WaitForSeconds (.1f);
 		}
 	}
 
@@ -120,5 +122,10 @@ public class SceneScript : MonoBehaviour {
 	public void TripleKill(){
 		killText.text = "TRIPLE KILL!";
 		killAnim.SetTrigger ("Triple");
+	}
+
+	//Kill count text controls:
+	public void IncreaseKill(){
+		killCountText.text = "Kills: x" + killedEnemies;
 	}
 }

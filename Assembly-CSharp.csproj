@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\PlatformLoop_EnemySpawn.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\SceneScript.cs" />
+     <Compile Include="Assets\Scripts\StatsController.cs" />
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>C:/Program Files/Unity 5.5.0b2/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
  </Reference>

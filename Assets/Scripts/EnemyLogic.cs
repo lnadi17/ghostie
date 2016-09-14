@@ -94,7 +94,7 @@ public class EnemyLogic : MonoBehaviour {
 				transform.position,
 				Quaternion.identity
 			);
-				
+
 			Destroy (gameObject);
 		}
 	}

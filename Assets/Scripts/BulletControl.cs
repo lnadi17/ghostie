@@ -20,6 +20,7 @@ public class BulletControl : MonoBehaviour {
 		if(other.tag == "Enemy"){
 			SceneScript.instance.killedEnemies++;
 			enemyCount++;
+			SceneScript.instance.IncreaseKill ();
 		}
 		if(enemyCount == 2){
 			SceneScript.instance.DoubleKill ();

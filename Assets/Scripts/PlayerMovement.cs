@@ -44,8 +44,8 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		CheckIfGrounded ();
-		if (grounded && Input.GetKeyDown(KeyCode.Space)){
-		//if (grounded && leftSideTouch()){
+		//if (grounded && Input.GetKeyDown(KeyCode.Space)){
+		if (grounded && leftSideTouch()){
 			if (!SceneScript.instance.playingStarted) {
 				SceneScript.instance.playingStarted = true;
 				return;
@@ -56,8 +56,8 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		sinceShoot += Time.deltaTime;
-		//if(rightSideTouch() && sinceShoot > 1){
-		if(Input.GetKeyDown(KeyCode.LeftShift) && sinceShoot > 1){
+		if(rightSideTouch() && sinceShoot > 1){
+		//if(Input.GetKeyDown(KeyCode.LeftShift) && sinceShoot > 1){
 			Shoot ();
 		}
 	}
@@ -74,6 +74,9 @@ public class PlayerMovement : MonoBehaviour {
 			1 << LayerMask.NameToLayer("Ground")
 		);
 	}
+
+
+	//Touch controls:
 
 	bool leftSideTouch(){
 		foreach(Touch touch in Input.touches){

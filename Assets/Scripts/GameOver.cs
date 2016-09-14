@@ -17,11 +17,11 @@ public class GameOver : MonoBehaviour {
 	void Update () {
 		if(transform.position.y < camTransform.position.y - 5){
 			SceneScript.instance.playingStarted = false;
-			IfOver ();
+			WhenOver ();
 		}
 	}
 
-	void IfOver(){
+	public void WhenOver(){
 		overCanvas.SetActive (true);
 		scoreText.text = SceneScript.instance.score.ToString () + "m";
 	}
