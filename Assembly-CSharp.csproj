@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\MiniSceneManager.cs" />
      <Compile Include="Assets\Scripts\ParallaxExperimental.cs" />
      <Compile Include="Assets\Scripts\ParticleDestroy.cs" />
+     <Compile Include="Assets\Scripts\PauseGame.cs" />
      <Compile Include="Assets\Scripts\PlatformLoop_EnemySpawn.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\SceneScript.cs" />
