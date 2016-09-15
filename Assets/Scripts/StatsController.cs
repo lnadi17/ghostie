@@ -21,6 +21,7 @@ public class StatsController : MonoBehaviour {
 	void ChangeLives(){
 		SceneScript.instance.playerLives--;
 		if(SceneScript.instance.playerLives < 0){
+			playerAnim.SetTrigger ("Lost");
 			gOver.WhenOver ();
 			return;
 		}
