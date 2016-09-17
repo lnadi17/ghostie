@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour {
 		pSystem = groundCheck.GetComponent<ParticleSystem> ();
 		widthPixel = Camera.main.pixelWidth;
 	}
+
+
 	
 	void Update () {
 		if (facingRight) {
