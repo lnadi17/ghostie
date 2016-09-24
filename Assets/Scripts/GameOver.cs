@@ -24,5 +24,10 @@ public class GameOver : MonoBehaviour {
 	public void WhenOver(){
 		overCanvas.SetActive (true);
 		scoreText.text = SceneScript.instance.score.ToString () + "m";
+		if (PlayerPrefs.HasKey("PlayerScore")){
+			if (PlayerPrefs.GetInt("PlayerScore") < SceneScript.instance.score){
+				PlayerPrefs.SetInt ("PlayerScore", SceneScript.instance.score);
+			}
+		}
 	}
 }

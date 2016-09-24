@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour {
 
 	public GameObject bullet;
+	public GameObject bestIndicator;
 
 	[HideInInspector]
 	public static bool grounded;
@@ -12,12 +13,14 @@ public class PlayerMovement : MonoBehaviour {
 	public float jumpForce;
 
 	private bool facingRight;
+	private GameObject bestIndicatorInstance;
 	private SpriteRenderer playerSpriteRenderer;
 	private Rigidbody2D playerRigidbody;
 	private ParticleSystem pSystem;
 	private Transform groundCheck;
 	private float sinceShoot = 0f; 
 	private int widthPixel;
+	private bool bestScoreExists;
 
 	void Start () {
 		facingRight = true;
@@ -26,11 +29,28 @@ public class PlayerMovement : MonoBehaviour {
 		groundCheck = transform.Find("GroundCheck");
 		pSystem = groundCheck.GetComponent<ParticleSystem> ();
 		widthPixel = Camera.main.pixelWidth;
+		bestScoreExists = false;
+		if (PlayerPrefs.HasKey ("PlayerScore")) {
+			bestScoreExists = true;
+			bestIndicatorInstance = Instantiate (
+				bestIndicator,
+				new Vector2 (PlayerPrefs.GetInt ("PlayerScore"), 0),
+				Quaternion.identity
+			) as GameObject;
+		}
 	}
-
-
 	
 	void Update () {
+
+
+		if (bestScoreExists && bestIndicatorInstance.transform.position.x - transform.position.x < 15) {
+			bestIndicatorInstance.transform.position = new Vector2 (
+				bestIndicatorInstance.transform.position.x,
+				transform.position.y
+			);
+			bestScoreExists = false; //Try that.
+		}
+
 		if (facingRight) {
 			playerSpriteRenderer.flipX = false;
 			groundCheck.transform.position = new Vector2 (transform.position.x - 0.5f, groundCheck.position.y);
@@ -46,8 +66,8 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		CheckIfGrounded ();
-		//if (grounded && Input.GetKeyDown(KeyCode.Space)){
-		if (grounded && leftSideTouch()){
+		if (grounded && Input.GetKeyDown(KeyCode.Space)){
+		//if (grounded && leftSideTouch()){
 			if (!SceneScript.instance.playingStarted) {
 				SceneScript.instance.playingStarted = true;
 				return;
@@ -58,8 +78,8 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		sinceShoot += Time.deltaTime;
-		if(rightSideTouch() && sinceShoot > 1){
-		//if(Input.GetKeyDown(KeyCode.LeftShift) && sinceShoot > 1){
+		//if(rightSideTouch() && sinceShoot > 1){
+		if(Input.GetKeyDown(KeyCode.LeftShift) && sinceShoot > 1){
 			Shoot ();
 		}
 	}
