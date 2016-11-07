@@ -10,16 +10,19 @@ public class GameOver : MonoBehaviour {
 
 	private Transform camTransform;
 
+
 	void Start () {
 		camTransform = Camera.main.transform;
 	}
 	
+
 	void Update () {
 		if(transform.position.y < camTransform.position.y - 5){
 			SceneScript.instance.playingStarted = false;
 			WhenOver ();
 		}
 	}
+
 
 	public void WhenOver(){
 		overCanvas.SetActive (true);

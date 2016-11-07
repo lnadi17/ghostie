@@ -13,10 +13,12 @@ public class CameraFollow : MonoBehaviour {
 	private Transform cameraTransform;
 	private float cameraHalfWidth;
 
+
 	void Start () {
 		cameraTransform = Camera.main.transform;
 		cameraHalfWidth = Camera.main.orthographicSize * Camera.main.aspect;
 	}
+
 
 	void Update(){
 		if (Mathf.Abs(playerTransform.position.y - cameraTransform.position.y) > float.Epsilon) {

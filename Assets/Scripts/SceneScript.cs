@@ -40,6 +40,7 @@ public class SceneScript : MonoBehaviour {
 	private float overallLength; //Gets assigned in LayoutPlatforms method.
 	private bool firstTime;
 
+
 	void Awake(){
 		if (instance == null){
 			instance = this;
@@ -66,6 +67,7 @@ public class SceneScript : MonoBehaviour {
 		}
 	}
 
+
 	void LayoutPlatforms(){
 		//First one is always on default position.
 		Instantiate (platformPrefabs [0], platformPrefabs [0].transform.position, Quaternion.identity);
@@ -90,6 +92,7 @@ public class SceneScript : MonoBehaviour {
 		}
 	}
 
+
 	//Returns sprite's half-width.
 	float xViaIndex(int index){
 		if (floatList [index] != 0) {
@@ -102,6 +105,7 @@ public class SceneScript : MonoBehaviour {
 		return floatList[index];
 	}
 
+
 	//Returns random range for next platform's Y pos.
 	public float DistanceFromY(){
 		if (firstTime){
@@ -113,16 +117,19 @@ public class SceneScript : MonoBehaviour {
 		return distance;
 	}
 
+
 	//Multiple kill controls:
 	public void DoubleKill(){
 		killText.text = "DOUBLE KILL!";
 		killAnim.SetTrigger ("Double");
 	}
 
+
 	public void TripleKill(){
 		killText.text = "TRIPLE KILL!";
 		killAnim.SetTrigger ("Triple");
 	}
+
 
 	//Kill count text controls:
 	public void IncreaseKill(){

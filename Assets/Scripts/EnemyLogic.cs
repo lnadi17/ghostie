@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
 
 public class EnemyLogic : MonoBehaviour {
 
@@ -18,6 +18,7 @@ public class EnemyLogic : MonoBehaviour {
 
 	private float _tempX;
 
+
 	void Start () {
 		rb2d = GetComponent<Rigidbody2D> ();
 		rdr = GetComponent<SpriteRenderer> ();
@@ -27,6 +28,7 @@ public class EnemyLogic : MonoBehaviour {
 		randomFloat = RandomFloat();
 	}
 	
+
 	void Update () {
 
 		//Speed is units per second.
@@ -79,6 +81,7 @@ public class EnemyLogic : MonoBehaviour {
 		return UnityEngine.Random.Range (0f, 5f);
 	}
 
+
 	void OnBecameInvisible(){
 		if (gameObject.activeSelf) {
 			if (rb2d.position.x < cameraTransform.position.x) {
@@ -86,6 +89,7 @@ public class EnemyLogic : MonoBehaviour {
 			}
 		}
 	}
+
 
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.tag == "Bullet"){

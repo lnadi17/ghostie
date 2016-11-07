@@ -13,6 +13,7 @@ public class ParallaxExperimental : MonoBehaviour {
 	private float _positionX;
 	private float speed;
 
+
 	void Start () {
 		LayerMask start = LayerMask.NameToLayer ("StartParallax");
 		LayerMask end = LayerMask.NameToLayer ("EndParallax");
@@ -25,6 +26,7 @@ public class ParallaxExperimental : MonoBehaviour {
 		}
 	}
 	
+
 	void Update () {
 		if(playerTransform.position.x != _positionX){
 			speed = startSpeed * 0.5f;
@@ -43,6 +45,7 @@ public class ParallaxExperimental : MonoBehaviour {
 		_positionX = playerTransform.position.x;
 	}
 
+
 	GameObject[] FindGameObjectsWithLayer (int layer) {
 		GameObject[] goArray = FindObjectsOfType(typeof(GameObject)) as GameObject[]; 
 		List<GameObject> goList = new List<GameObject> ();
@@ -53,9 +56,9 @@ public class ParallaxExperimental : MonoBehaviour {
 			} 
 		} 
 
-		if (goList.Count == 0) { 
-			return null; 
-		} 
+		if (goList.Count == 0) {
+			return null;
+		}
 
 		return goList.ToArray(); 
 	}

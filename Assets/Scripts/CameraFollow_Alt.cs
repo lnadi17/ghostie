@@ -9,10 +9,12 @@ public class CameraFollow_Alt: MonoBehaviour {
 
 	private float cameraHalfWidth;
 
+
 	void Start () {
 		cameraHalfWidth =  Camera.main.orthographicSize * Camera.main.aspect;
 	}
 	
+
 	void Update () {
 		if (ChangeOrNot ()) {
 			Vector2 futurePos = Vector2.Lerp (transform.position, playerTransform.position, 0.1f);
@@ -21,6 +23,7 @@ public class CameraFollow_Alt: MonoBehaviour {
 			transform.position = new Vector3 (playerTransform.position.x - cameraHalfWidth * cameraOffsetX, transform.position.y, -10);
 		}
 	}
+
 
 	bool ChangeOrNot(){
 		if(PlayerMovement.grounded){

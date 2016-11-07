@@ -7,9 +7,11 @@ public class MiniSceneManager : MonoBehaviour {
 		
 	private AsyncOperation op;
 
+
 	void Start (){
 		StartCoroutine(LoadRoutine());
 	}
+
 
 	private IEnumerator LoadRoutine(){
 		op = SceneManager.LoadSceneAsync ("Main");
@@ -17,15 +19,18 @@ public class MiniSceneManager : MonoBehaviour {
 		yield return null;
 	}
 
+
 	public void LoadMainScene(){
 		if (op.progress >= 0.9f) {
 			op.allowSceneActivation = true;
 		}
 	}
 
+
 	public void ReloadScene(){
 		LoadMainScene ();
 	}
+
 
 	public void BackToMenu(){
 		SceneManager.LoadScene ("MenuScene");

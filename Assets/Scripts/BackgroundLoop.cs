@@ -8,11 +8,13 @@ public class BackgroundLoop : MonoBehaviour {
 	private SpriteRenderer rdr;
 	private Transform cameraTransform;
 
+
 	void Start(){
 		rdr = GetComponent<SpriteRenderer> ();
 		cameraTransform = Camera.main.transform;
 		StartCoroutine (CheckForReposition ());
 	}
+
 
 	IEnumerator CheckForReposition(){
 		while (true) {

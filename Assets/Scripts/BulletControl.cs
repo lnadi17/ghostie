@@ -7,13 +7,16 @@ public class BulletControl : MonoBehaviour {
 
 	private int enemyCount = 0;
 
+
 	void Start () {
 		Destroy (gameObject, 1f);
 	}
 	
+
 	void Update () {
 		transform.Translate (new Vector2 (speed * Time.deltaTime, 0));
 	}
+
 
 	//Enemy collider is not a trigger but it works.
 	void OnTriggerEnter2D (Collider2D other){

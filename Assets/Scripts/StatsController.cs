@@ -13,10 +13,12 @@ public class StatsController : MonoBehaviour {
 	private int imgLastIndex;
 	private GameOver gOver;
 
+
 	void Start(){
 		gOver = GameObject.Find ("Player").GetComponent<GameOver> ();
 		imgLastIndex = SceneScript.instance.playerLives - 1;
 	}
+
 
 	void ChangeLives(){
 		SceneScript.instance.playerLives--;
@@ -29,6 +31,7 @@ public class StatsController : MonoBehaviour {
 		imgLastIndex--;
 		playerAnim.SetTrigger ("Lost");
 	}
+
 
 	void OnTriggerEnter2D (Collider2D other){
 		if(other.tag == "Enemy"){

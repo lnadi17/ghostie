@@ -9,12 +9,14 @@ public class PlatformLoop_EnemySpawn : MonoBehaviour {
 	private float boundsExtentsX;
 	private int chance;
 
+
 	void Start(){
 		playerTransform = GameObject.Find ("Player").transform;
 		SpriteRenderer rdr = GetComponent<SpriteRenderer> ();
 		boundsExtentsX = rdr.bounds.extents.x;
 		chance = SceneScript.instance.enemySpawnChance;
 	}
+
 
 	void OnBecameInvisible(){
 		if (gameObject.activeSelf) { 
@@ -41,6 +43,7 @@ public class PlatformLoop_EnemySpawn : MonoBehaviour {
 		}
 	}
 
+
 	void SpawnEnemy(){
 		Instantiate (
 			enemyPrefab, 
@@ -48,6 +51,7 @@ public class PlatformLoop_EnemySpawn : MonoBehaviour {
 			Quaternion.identity
 		);
 	}
+
 
 	bool ChancePercent(int percentage){
 		int[] caseList = new int[100];
