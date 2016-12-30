@@ -68,8 +68,8 @@ public class PlayerMovement : MonoBehaviour {
 
 		CheckIfGrounded ();
 
-		//if (grounded && Input.GetKeyDown(KeyCode.Space)){
-		if (grounded && LeftSideTouch()){
+		if (grounded && Input.GetKeyDown(KeyCode.Space)){
+		//if (grounded && LeftSideTouch()){
 			if (!SceneScript.instance.playingStarted) {
 				SceneScript.instance.playingStarted = true;
 				return;
@@ -81,8 +81,8 @@ public class PlayerMovement : MonoBehaviour {
 
 		sinceShoot += Time.deltaTime;
 
-		if(RightSideTouch() && sinceShoot > 1){
-		//if(Input.GetKeyDown(KeyCode.LeftShift) && sinceShoot > 1){
+		//if(RightSideTouch() && sinceShoot > 1){
+		if(Input.GetKeyDown(KeyCode.LeftShift) && sinceShoot > 1){
 			Shoot ();
 		}
 	}
@@ -124,7 +124,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 
-	//Tests if the mouse button is over UI:
+	//Tests if the touch position is over UI:
 	bool IsTouchOverUI(){
 		foreach (Touch touch in Input.touches){
 			foreach (RectTransform elem in uiElements){
