@@ -68,8 +68,8 @@ public class PlayerMovement : MonoBehaviour {
 
 		CheckIfGrounded ();
 
-		if (grounded && Input.GetKeyDown(KeyCode.Space)){
-		//if (grounded && LeftSideTouch()){
+		//if (grounded && Input.GetKeyDown(KeyCode.Space)){
+		if (grounded && LeftSideTouch()){
 			if (!SceneScript.instance.playingStarted) {
 				SceneScript.instance.playingStarted = true;
 				return;

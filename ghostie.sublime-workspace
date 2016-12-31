@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"fin",
+				"Find(string name)\tTransform"
+			],
+			[
 				"Vector3",
 				"Vector3(float x, float y, float z)\tVector3(float x, float y, float z)"
 			],
@@ -35,14 +39,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "Assets/Scripts/PlayerMovement.cs",
-			"settings":
-			{
-				"buffer_size": 3771,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -276,20 +272,23 @@
 	],
 	"file_history":
 	[
+		"/home/newb/Documents/Ghostie/Assets/Scripts/ParticleDestroy.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/PlayerMovement.cs",
+		"/home/newb/Documents/Ghostie/Assets/Scripts/MiniSceneManager.cs",
+		"/home/newb/Documents/Ghostie/Assets/Scripts/MainMenuScript.cs",
+		"/home/newb/Documents/Ghostie/",
+		"/home/newb/Documents/Ghostie/Assets/Scripts/SceneScript.cs",
+		"/home/newb/Documents/Ghostie/Assets/Scripts/PauseGame.cs",
 		"/home/newb/Documents/Ghostie/ghostie.sublime-project",
 		"/home/newb/Documents/Tricky-Colors/Assets/Scripts/ColorScript.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/GameOver.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/CameraFollow.cs",
-		"/home/newb/Documents/Ghostie/Assets/Scripts/PauseGame.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/PlatformLoop_EnemySpawn.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/CameraFollow_Alt.cs",
-		"/home/newb/Documents/Ghostie/Assets/Scripts/SceneScript.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/StatsController.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/BackgroundLoop.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/BulletControl.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/EnemyLogic.cs",
-		"/home/newb/Documents/Ghostie/Assets/Scripts/MiniSceneManager.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/ParallaxExperimental.cs",
 		"/home/newb/Documents/Squareball/squareball.sublime-project",
 		"/home/newb/Documents/Squareball/Assets/Scripts/ProtoScript.cs",
@@ -359,38 +358,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "Assets/Scripts/PlayerMovement.cs",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 3771,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 756.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -502,7 +471,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 303.0,
+	"side_bar_width": 265.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

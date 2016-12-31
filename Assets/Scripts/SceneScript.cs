@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Random = UnityEngine.Random;
@@ -11,7 +9,7 @@ public class SceneScript : MonoBehaviour {
 	public static SceneScript instance = null;
 
 	public int playerLives = 3;
-	public int score = 0;
+	public int score = 0; 
 	public int killedEnemies = 0;
 	public bool playingStarted = false;
 	//public bool gameOver = false;
@@ -27,6 +25,7 @@ public class SceneScript : MonoBehaviour {
 	public Animator killAnim;
 	public Text killText;
 	public Text killCountText;
+	public GameObject confirmationPanel;
 
 	[HideInInspector]
 	public float prevPositionX;
@@ -134,5 +133,15 @@ public class SceneScript : MonoBehaviour {
 	//Kill count text controls:
 	public void IncreaseKill(){
 		killCountText.text = "Kills: x" + killedEnemies;
+	}
+
+
+	public void ShowConfirmationPanel(){
+		confirmationPanel.SetActive(true);
+	}
+
+
+	public void HideConfirmationPanel(){
+		confirmationPanel.SetActive(false);
 	}
 }

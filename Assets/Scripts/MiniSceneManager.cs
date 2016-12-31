@@ -1,15 +1,21 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MiniSceneManager : MonoBehaviour {
-		
+	
 	private AsyncOperation op;
 
 
 	void Start (){
 		StartCoroutine(LoadRoutine());
+	}
+	
+
+	void Update () {
+		if (Input.GetKey(KeyCode.Escape)){ 
+			Application.Quit();
+		}
 	}
 
 

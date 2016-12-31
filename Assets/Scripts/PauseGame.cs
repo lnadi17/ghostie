@@ -43,6 +43,16 @@ public class PauseGame : MonoBehaviour {
 	}
 
 
+	public void DisableAll(){
+		foreach (GameObject ob in activeOnPause){
+			ob.SetActive(false);
+		}
+		foreach (GameObject ob in activeOnResume){
+			ob.SetActive(false);
+		}
+	}
+
+
 	public void VolumeChanged(){
 			
 	}
