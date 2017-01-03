@@ -81,8 +81,8 @@ public class PlayerMovement : MonoBehaviour {
 
 		sinceShoot += Time.deltaTime;
 
-		//if(RightSideTouch() && sinceShoot > 1){
-		if(Input.GetKeyDown(KeyCode.LeftShift) && sinceShoot > 1){
+		if(RightSideTouch() && sinceShoot > 1){
+		//if(Input.GetKeyDown(KeyCode.LeftShift) && sinceShoot > 1){
 			Shoot ();
 		}
 	}

@@ -39,6 +39,15 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "Assets/Scripts/MiniSceneManager.cs",
+			"settings":
+			{
+				"buffer_size": 727,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -272,8 +281,10 @@
 	],
 	"file_history":
 	[
-		"/home/newb/Documents/Ghostie/Assets/Scripts/ParticleDestroy.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/PlayerMovement.cs",
+		"/home/newb/Documents/Tricky-Colors/Assets/Scripts/PlayerMovement.cs",
+		"/home/newb/Documents/Bouncap/bouncap.sublime-project",
+		"/home/newb/Documents/Ghostie/Assets/Scripts/ParticleDestroy.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/MiniSceneManager.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/MainMenuScript.cs",
 		"/home/newb/Documents/Ghostie/",
@@ -358,8 +369,42 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "Assets/Scripts/MiniSceneManager.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 727,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								726,
+								726
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"668,678": "Method 'BackToMenu' can be made static."
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 45.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -434,7 +479,7 @@
 		[
 			[
 				"",
-				"~/Documents/Tricky-Colors/tricky_colors.sublime-project"
+				"~/Documents/Clever.ge/clever_ge.sublime-workspace"
 			],
 			[
 				"play",

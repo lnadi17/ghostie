@@ -13,7 +13,7 @@ public class MiniSceneManager : MonoBehaviour {
 	
 
 	void Update () {
-		if (Input.GetKey(KeyCode.Escape)){ 
+		if (SceneManager.GetActiveScene().name == "MenuScene" && Input.GetKey(KeyCode.Escape)){ 
 			Application.Quit();
 		}
 	}
