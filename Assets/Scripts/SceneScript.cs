@@ -57,7 +57,7 @@ public class SceneScript : MonoBehaviour {
 		StartCoroutine (IncreaseScore ());
 	}
 
-	//Score up:
+
 	IEnumerator IncreaseScore(){
 		while (true) {
 			if (playingStarted) {score = (int)rbPlayer.transform.position.x;}

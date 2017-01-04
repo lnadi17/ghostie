@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 using UnityEngine;
 
 public class GameOver : MonoBehaviour {
@@ -31,6 +29,8 @@ public class GameOver : MonoBehaviour {
 			if (PlayerPrefs.GetInt("PlayerScore") < SceneScript.instance.score){
 				PlayerPrefs.SetInt ("PlayerScore", SceneScript.instance.score);
 			}
+		}else{
+			PlayerPrefs.SetInt("PlayerScore", SceneScript.instance.score);
 		}
 	}
 }

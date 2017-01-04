@@ -15,15 +15,16 @@ public class PlayerMovement : MonoBehaviour {
 	public float jumpForce;
 
 	private bool facingRight;
-	private GameObject bestIndicatorInstance;
 	private SpriteRenderer playerSpriteRenderer;
 	private Rigidbody2D playerRigidbody;
 	private ParticleSystem pSystem;
 	private Transform groundCheck;
 	private float sinceShoot = 0f; 
 	private int widthPixel;
-	private bool bestScoreExists;
-	
+	//private bool bestScoreExists;
+	//private GameObject bestIndicatorInstance;
+
+
 	void Start () {
 		facingRight = true;
 		playerSpriteRenderer = GetComponent<SpriteRenderer> ();
@@ -31,27 +32,19 @@ public class PlayerMovement : MonoBehaviour {
 		groundCheck = transform.Find("GroundCheck");
 		pSystem = groundCheck.GetComponent<ParticleSystem> ();
 		widthPixel = Camera.main.pixelWidth;
-		bestScoreExists = false;
+		//bestScoreExists = false;
 		if (PlayerPrefs.HasKey ("PlayerScore")) {
-			bestScoreExists = true;
-			bestIndicatorInstance = Instantiate (
+			//bestScoreExists = true;
+			Instantiate (
 				bestIndicator,
 				new Vector2 (PlayerPrefs.GetInt ("PlayerScore"), 0),
 				Quaternion.identity
-			) as GameObject;
+			);
 		}
 	}
 	
 
 	void Update () {
-		if (bestScoreExists && bestIndicatorInstance.transform.position.x - transform.position.x < 15) {
-			bestIndicatorInstance.transform.position = new Vector2 (
-				bestIndicatorInstance.transform.position.x,
-				transform.position.y
-			);
-			bestScoreExists = false; //Try that.
-		}
-
 		if (facingRight) {
 			playerSpriteRenderer.flipX = false;
 			groundCheck.transform.position = new Vector2 (transform.position.x - 0.5f, groundCheck.position.y);
@@ -68,7 +61,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		CheckIfGrounded ();
 
-		//if (grounded && Input.GetKeyDown(KeyCode.Space)){
+		//	if (grounded && Input.GetKeyDown(KeyCode.Space)){
 		if (grounded && LeftSideTouch()){
 			if (!SceneScript.instance.playingStarted) {
 				SceneScript.instance.playingStarted = true;

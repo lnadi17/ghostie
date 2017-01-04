@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"Translate",
+				"Translate(float x, float y, float z)\tvoid"
+			],
+			[
+				"readon",
+				"readonly\treadonly"
+			],
+			[
+				"find",
+				"FindChild(string name)\tTransform"
+			],
+			[
+				"bestIndicat",
+				"bestIndicatorInstance\tGameObject"
+			],
+			[
+				"child",
+				"FindChild(string name)\tTransform"
+			],
+			[
+				"best",
+				"bestIndicatorInstance\tGameObject"
+			],
+			[
 				"fin",
 				"Find(string name)\tTransform"
 			],
@@ -40,10 +64,37 @@
 	"buffers":
 	[
 		{
-			"file": "Assets/Scripts/MiniSceneManager.cs",
+			"file": "Assets/Scripts/BestIndicatorMovement.cs",
 			"settings":
 			{
-				"buffer_size": 727,
+				"buffer_size": 1341,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Scripts/PlayerMovement.cs",
+			"settings":
+			{
+				"buffer_size": 3459,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Scripts/PlatformLoop_EnemySpawn.cs",
+			"settings":
+			{
+				"buffer_size": 1551,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Scripts/StatsController.cs",
+			"settings":
+			{
+				"buffer_size": 782,
 				"encoding": "UTF-8 with BOM",
 				"line_ending": "Unix"
 			}
@@ -56,10 +107,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 338.0,
-		"last_filter": "",
+		"height": 354.0,
+		"last_filter": ":w",
 		"selected_items":
 		[
+			[
+				":w",
+				":w - Save"
+			],
 			[
 				"omnishar",
 				"OmniSharpSublime: Hide Info Panel"
@@ -253,7 +308,7 @@
 				"Package Control: Disable Package"
 			]
 		],
-		"width": 431.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -281,21 +336,22 @@
 	],
 	"file_history":
 	[
+		"/home/newb/Documents/Ghostie/Assets/Scripts/CameraFollow_Alt.cs",
+		"/home/newb/Documents/Ghostie/Assets/Scripts/MiniSceneManager.cs",
+		"/home/newb/Documents/Ghostie/Assets/BestIndicatorMovement.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/PlayerMovement.cs",
+		"/home/newb/Documents/Ghostie/Assets/Scripts/SceneScript.cs",
+		"/home/newb/Documents/Ghostie/Assets/Scripts/GameOver.cs",
 		"/home/newb/Documents/Tricky-Colors/Assets/Scripts/PlayerMovement.cs",
 		"/home/newb/Documents/Bouncap/bouncap.sublime-project",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/ParticleDestroy.cs",
-		"/home/newb/Documents/Ghostie/Assets/Scripts/MiniSceneManager.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/MainMenuScript.cs",
 		"/home/newb/Documents/Ghostie/",
-		"/home/newb/Documents/Ghostie/Assets/Scripts/SceneScript.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/PauseGame.cs",
 		"/home/newb/Documents/Ghostie/ghostie.sublime-project",
 		"/home/newb/Documents/Tricky-Colors/Assets/Scripts/ColorScript.cs",
-		"/home/newb/Documents/Ghostie/Assets/Scripts/GameOver.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/CameraFollow.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/PlatformLoop_EnemySpawn.cs",
-		"/home/newb/Documents/Ghostie/Assets/Scripts/CameraFollow_Alt.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/StatsController.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/BackgroundLoop.cs",
 		"/home/newb/Documents/Ghostie/Assets/Scripts/BulletControl.cs",
@@ -335,7 +391,7 @@
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 70.0
 	},
 	"find_in_files":
 	{
@@ -369,40 +425,134 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "Assets/Scripts/MiniSceneManager.cs",
+					"file": "Assets/Scripts/BestIndicatorMovement.cs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 727,
+						"buffer_size": 1341,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								726,
-								726
+								994,
+								994
 							]
 						],
 						"settings":
 						{
 							"oops":
 							{
-								"668,678": "Method 'BackToMenu' can be made static."
+								"1013,1021": "'TextLerp' is not a known identifier",
+								"1023,1024": "Cannot convert from ? to System.Collections.IEnumerator",
+								"1024,1025": "Invocation error: AmbiguousMatch"
 							},
 							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 45.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Assets/Scripts/PlayerMovement.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3459,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2924,
+								2924
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 252.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Assets/Scripts/PlatformLoop_EnemySpawn.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1551,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Assets/Scripts/StatsController.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 782,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19,
+								19
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"0,5": "Using directive is not used by code and can be removed safely.",
+								"26,31": "Using directive is not used by code and can be removed safely."
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -410,7 +560,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 25.0
+		"height": 24.0
 	},
 	"input":
 	{
@@ -459,7 +609,7 @@
 	"project": "ghostie.sublime-project",
 	"replace":
 	{
-		"height": 46.0
+		"height": 44.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -468,6 +618,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"Assets/Scripts/StatsController.cs"
+			]
 		],
 		"width": 0.0
 	},
@@ -479,7 +633,7 @@
 		[
 			[
 				"",
-				"~/Documents/Clever.ge/clever_ge.sublime-workspace"
+				"~/Documents/Tricky-Colors/tricky_colors.sublime-project"
 			],
 			[
 				"play",
@@ -516,7 +670,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 265.0,
+	"side_bar_width": 240.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
