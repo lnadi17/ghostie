@@ -39,6 +39,7 @@ public class MiniSceneManager : MonoBehaviour {
 
 
 	public void BackToMenu(){
+		Time.timeScale = 1;
 		SceneManager.LoadScene ("MenuScene");
 	}
 }

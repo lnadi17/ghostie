@@ -30,7 +30,6 @@ public class PauseGame : MonoBehaviour {
 
 
 	public void Resume(){
-
 		foreach (GameObject ob in activeOnPause) {
 			ob.SetActive (false);
 		}

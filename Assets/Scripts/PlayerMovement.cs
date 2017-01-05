@@ -14,27 +14,19 @@ public class PlayerMovement : MonoBehaviour {
 	public float speed;
 	public float jumpForce;
 
-	private bool facingRight;
-	private SpriteRenderer playerSpriteRenderer;
 	private Rigidbody2D playerRigidbody;
 	private ParticleSystem pSystem;
 	private Transform groundCheck;
 	private float sinceShoot = 0f; 
 	private int widthPixel;
-	//private bool bestScoreExists;
-	//private GameObject bestIndicatorInstance;
 
 
 	void Start () {
-		facingRight = true;
-		playerSpriteRenderer = GetComponent<SpriteRenderer> ();
 		playerRigidbody = GetComponent<Rigidbody2D> ();
 		groundCheck = transform.Find("GroundCheck");
 		pSystem = groundCheck.GetComponent<ParticleSystem> ();
 		widthPixel = Camera.main.pixelWidth;
-		//bestScoreExists = false;
 		if (PlayerPrefs.HasKey ("PlayerScore")) {
-			//bestScoreExists = true;
 			Instantiate (
 				bestIndicator,
 				new Vector2 (PlayerPrefs.GetInt ("PlayerScore"), 0),
@@ -45,14 +37,6 @@ public class PlayerMovement : MonoBehaviour {
 	
 
 	void Update () {
-		if (facingRight) {
-			playerSpriteRenderer.flipX = false;
-			groundCheck.transform.position = new Vector2 (transform.position.x - 0.5f, groundCheck.position.y);
-		} else {
-			playerSpriteRenderer.flipX = true;
-			groundCheck.transform.position = new Vector2 (transform.position.x + 0.5f, groundCheck.position.y);
-		}
-
 		//When playing starts:
 		if (SceneScript.instance.playingStarted) {
 			pSystem.Play();
@@ -61,7 +45,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		CheckIfGrounded ();
 
-		//	if (grounded && Input.GetKeyDown(KeyCode.Space)){
+		//if (grounded && Input.GetKeyDown(KeyCode.Space)){
 		if (grounded && LeftSideTouch()){
 			if (!SceneScript.instance.playingStarted) {
 				SceneScript.instance.playingStarted = true;
@@ -74,8 +58,8 @@ public class PlayerMovement : MonoBehaviour {
 
 		sinceShoot += Time.deltaTime;
 
-		if(RightSideTouch() && sinceShoot > 1){
-		//if(Input.GetKeyDown(KeyCode.LeftShift) && sinceShoot > 1){
+		if (RightSideTouch() && sinceShoot > 1){
+		//if (Input.GetKeyDown(KeyCode.LeftShift) && sinceShoot > 1){
 			Shoot ();
 		}
 	}
